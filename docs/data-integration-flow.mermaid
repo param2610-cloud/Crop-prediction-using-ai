@@ -1,0 +1,40 @@
+flowchart TD
+    subgraph DataSources["Data Sources"]
+        A[IoT Sensors] --> E[Local Edge Device]
+        B[Weather APIs] --> E
+        C[Satellite Data] --> E
+        D[Government Soil Maps] --> E
+    end
+
+    subgraph Processing["Data Processing Layer"]
+        E --> F[Data Validation]
+        F --> G[Data Normalization]
+        G --> H[Data Fusion Engine]
+        
+        I[Historical Data DB] <--> H
+        J[ML Models] <--> H
+    end
+
+    subgraph Analytics["Analytics Layer"]
+        H --> K[Crop Prediction]
+        H --> L[Yield Estimation]
+        H --> M[Market Analysis]
+        H --> N[Weather Patterns]
+    end
+
+    subgraph Delivery["Data Delivery"]
+        K & L & M & N --> O[API Gateway]
+        O --> P[Mobile App]
+        O --> Q[SMS Alerts]
+        O --> R[Voice Alerts]
+    end
+
+    subgraph Storage["Data Storage"]
+        H --> S[(Time Series DB)]
+        H --> T[(Analytics DB)]
+    end
+
+
+
+    
+https://claude.site/artifacts/219eefe8-090d-4f2d-9c1c-04060342e85a

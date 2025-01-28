@@ -1,0 +1,36 @@
+flowchart TD
+    subgraph CoreSensors["Essential Sensors (₹3000-4000)"]
+        A[Temperature/Humidity - DHT22] --> D[Arduino Nano]
+        B[Soil Moisture] --> D
+        C[Soil pH] --> D
+        E[Light Intensity] --> D
+        F[Rainfall Sensor] --> D
+    end
+
+    subgraph OptionalSensors["Optional Sensors (₹2000-3000)"]
+        G[NPK Sensor] -.-> D
+        H[Leaf Area Camera] -.-> D
+    end
+
+    subgraph Communication["Communication (₹1500)"]
+        D --> I[GSM Module]
+        D --> J[SD Card Storage]
+    end
+
+    subgraph Analysis["Cloud Analysis"]
+        I --> K[Data Processing]
+        K --> L[Weather Integration]
+        K --> M[Soil Analysis]
+        K --> N[Crop Growth Model]
+        
+        L & M & N --> O[Decision Support System]
+    end
+
+    subgraph Interface["Farmer Interface"]
+        O --> P[Mobile App]
+        O --> Q[Voice Alerts]
+        O --> R[SMS Updates]
+    end
+
+
+https://claude.site/artifacts/e21e4e1d-08c1-42b1-a685-f908873ed6a9
